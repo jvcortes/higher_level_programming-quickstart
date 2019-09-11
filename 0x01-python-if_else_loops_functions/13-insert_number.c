@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * insert_node - inserts a node in a sorted linked lists
+ * insert_node - inserts a node in a sorted linked list
  * @head: head of the list
  * @number: number of the node
  *
@@ -12,37 +12,40 @@
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *current = *head;
-	listint_t *node;
+	listint_t *previous = NULL;
+	listint_t *node = malloc(sizeof(listint_t));
+	if (node == NULL)
+	{
+		free(node);
+		return (NULL);
+	}
+	node->n = number;
 
 	if (!*head)
 	{
-		*head = malloc(sizeof(listint_t));
-		if (*head == NULL)
-		{
-			free(*head);
-			return (NULL);
-		}
-		(*head)->n = number;
+		*head = node;
 		return (*head);
 	}
 
-	do {
-		if ((!current->next) || (current->n < number && current->next->n > number))
+	for(;;) {
+		if (current->n >= number)
 		{
-			node = malloc(sizeof(listint_t));
-			if (node == NULL)
-			{
-				free(node);
-				return (NULL);
-			}
-			node->n = number;
-			node->next = current->next;
-			current->next = node;
+			node->next = current;
+			if (previous != NULL)
+				previous->next = node;
+			if (current == *head)
+				*head = node;
 			return (node);
 		}
+		previous = current;
 		current = current->next;
+		if (!current)
+		{
+			previous->next = node;
+			return (node);
+		}
+	} 
 
-	} while (current->next);
-
+	free(node);
 	return (NULL);
 }
