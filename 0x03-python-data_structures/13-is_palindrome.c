@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "lists.h"
 
+#define SIZE 8192
 /**
  * is_palindrome - checks if a listint_t linked list is a palindrome
  * @head: list head
@@ -9,36 +10,22 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *top = *head;
-	listint_t *bottom = *head;
+	listint_t *current = *head;
+	int n[SIZE];
 	int i = 0, j = 0;
 
 	if (!*head)
 		return (1);
 
-	while (bottom->next)
+	while (current)
 	{
-		bottom = bottom->next;
-		i++;
+		n[i++] = current->n;
+		current = current->next;
 	}
 
-	i--;
-	while (top)
-	{
-		j = 0;
-		if (top->n != bottom->n)
-			break;
-		else if (bottom == *head)
-			return (1);
-		top = top->next;
-		i--;
-		bottom = *head;
-		while (j <= i)
-		{
-			bottom = bottom->next;
-			j++;
-		}
-	}
+	for (j = i - 1, i = 0; j >= 0; i++, j--)
+		if (n[i] != n[j])
+			return (0);
 
-	return (0);
+	return (1);
 }
