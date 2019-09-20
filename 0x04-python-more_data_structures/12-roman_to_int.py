@@ -2,7 +2,7 @@
 def roman_to_int(roman_string):
 
     if not isinstance(roman_string, str):
-        return None
+        return 0
 
     result = 0
     charset = {'M': 1000,
@@ -16,7 +16,7 @@ def roman_to_int(roman_string):
 
     for c in reversed(roman_string):
         if c not in charset.keys():
-            return None
+            return 0
 
         if prev in ('M', 'D') and c == 'C':
             result -= charset[c]
