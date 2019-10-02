@@ -95,10 +95,10 @@ class Square:
             - The second element of the position will be represented as newline
               characters before the square.
         """
-        if self.position[1]:
-            for _ in range(self.position[1]):
-                print()
         if self.size:
+            if self.position[1]:
+                for _ in range(self.position[1]):
+                    print()
             for _ in range(self.size):
                 if self.position[0]:
                     for _ in range(self.position[0]):
@@ -107,6 +107,4 @@ class Square:
                     print('#', end='')
                 print()
         else:
-            for _ in range(self.position[0]):
-                print(" ", end='')
             print()
