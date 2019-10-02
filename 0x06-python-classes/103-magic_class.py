@@ -1,12 +1,12 @@
-#!/usr/bin/python3.4
+#!/usr/bin/python3
 import math
 
 
 class MagicClass:
-
-
+    """ Defines a circle object """
 
     def __init__(self, radius):
+
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
