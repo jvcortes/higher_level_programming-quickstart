@@ -37,8 +37,8 @@ class Square:
             for i in position:
                 if not isinstance(i, int) or i < 0:
                     raise ValueError("position must be a tuple of 2 \
-                             positive integers")
-            self.__position = position
+                            positive integers")
+                self.__position = position
         else:
             raise ValueError("position must be a tuple of 2 positive \
                     integers")
@@ -75,14 +75,14 @@ class Square:
             for i in value:
                 if not isinstance(i, int) or i < 0:
                     raise ValueError("position must be a tuple of 2 \
-                             positive integers")
-            self.__position = value
+                            positive integers")
+                self.__position = value
         else:
             raise ValueError("position must be a tuple of 2 positive \
                     integers")
 
     def area(self):
-        """ Returns the area of the square """
+        """ Returns the area of the square."""
         return self.size ** 2
 
     def my_print(self):
@@ -107,4 +107,6 @@ class Square:
                     print('#', end='')
                 print()
         else:
+            for _ in range(self.position[0]):
+                print(" ", end='')
             print()
