@@ -108,8 +108,6 @@ class Square:
                     s += '#'
                 if i < self.size - 1:
                     s += '\n'
-        else:
-            s += '\n'
 
         return s
 
