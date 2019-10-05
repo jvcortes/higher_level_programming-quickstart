@@ -1,0 +1,40 @@
+``say_my_name()`` prints "My name is <first_name> <last_name>".
+
+1 - Print with two strings
+========================================
+
+``say_my_name()`` works with two strings:
+
+::
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+	>>> say_my_name("Cave", "Johnson")
+	My name is Cave Johnson
+
+2 - Print first name only
+========================================
+
+``say_my_name()`` can print only the first name if specified:
+
+::
+	>>> say_my_name("Chell")
+	My name is Chell
+
+3 - Print a non-string
+========================================
+
+``say_my_name()`` won't print a non-string type:
+
+::
+	>>> say_my_name(1337, "H4x0r")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+	>>> say_my_name("noobmaster", 69)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+::
+	>>> say_my_name(9001, 9002)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
