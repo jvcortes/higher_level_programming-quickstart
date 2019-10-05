@@ -17,7 +17,7 @@
 
 ::
 	>>> say_my_name("Chell")
-	My name is Chell
+	My name is Chell 
 
 3 - Print a non-string
 ========================================
