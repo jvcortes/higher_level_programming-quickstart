@@ -1,0 +1,102 @@
+``print_square()`` prints a square of a determined size with the character '#'.
+
+1 - Print a square with a size of 5
+========================================
+
+``print_square()`` works with an integer parameter:
+
+::
+	>>> print_square = __import__("4-print_square").print_square
+	>>> print_square(5)
+	#####
+	#####
+	#####
+	#####
+	#####
+	<BLANKLINE>
+
+2 - Print a square with a size of 0
+========================================
+
+``print_square()`` will only print a newline if the size is zero
+
+::
+	>>> print_square(0)
+	<BLANKLINE>
+
+3 - Print a square with a size of 1 and 12 
+========================================
+
+::
+	>>> print_square(1)
+	#
+	<BLANKLINE>
+
+::
+	>>> print_square(12) 
+	############
+	############
+	############
+	############
+	############
+	############
+	############
+	############
+	############
+	############
+	############
+	############
+	<BLANKLINE>
+
+5 - Print a square with a size which is less than zero
+========================================
+
+``print_square()`` will raise an exception if the size is less than zero:
+
+::
+	>>> print_square(-1)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+6 - Print a square with a non-integer size
+========================================
+
+``print_square()`` will raise an exception if the size is not an integer:
+
+::
+	>>> print_square(-3.2)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+	>>> print_square('h')
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+	>>> print_square("22")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+7 - Print a square repeatedlty
+========================================
+
+::
+	>>> for i in range(3):
+	...	print_square(4)
+	...
+	####
+	####
+	####
+	####
+	<BLANKLINE>
+	####
+	####
+	####
+	####
+	<BLANKLINE>
+	####
+	####
+	####
+	####
+	<BLANKLINE>
