@@ -1,4 +1,4 @@
-``add_integer()`` returns the sum of two numbers.
+``add_integer()`` returns the integer sum of two numbers.
 
 1 - Sum of integers
 ========================================
@@ -17,7 +17,7 @@
 
 ::
 	>>> add_integer(2.4, 34.7)
-	37.1
+	37
 
 3 - Sum of mixed types
 ========================================
@@ -26,7 +26,7 @@
 
 ::
 	>>> add_integer(22.4, 10)
-	32.4
+	32
 
 4 - Sum of only one parameter
 ========================================
