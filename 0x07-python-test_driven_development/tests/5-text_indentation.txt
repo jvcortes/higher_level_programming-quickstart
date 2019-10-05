@@ -179,3 +179,23 @@
 	<BLANKLINE>
 	.
 	<BLANKLINE>
+
+11 - Non-string argument
+========================================
+
+``text_indentation() will raise a TypeError exception if its argument is not
+a string:
+
+::
+	>>> str = 42069
+	>>> text_indentation(str)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+12 - Missing argument
+========================================
+
+::
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text_indentation() missing 1 required positional argument: 'text'

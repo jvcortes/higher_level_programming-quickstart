@@ -26,3 +26,5 @@ def text_indentation(text):
                     result = ""
             result = result.strip(" ")
             print(result, end='')
+    else:
+        raise TypeError("text must be a string")
