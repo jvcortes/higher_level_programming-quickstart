@@ -1,0 +1,181 @@
+``text_indentation()`` prints a text with two newline characters after the characters
+``.``, ``?``, and ``:``
+
+1 - Simple sentence 
+========================================
+
+::
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+	>>> str = "We live in a society."
+	>>> text_indentation(str)
+	We live in a society.
+	<BLANKLINE>
+
+2 - Sentence with question mark
+========================================
+
+::
+	>>> str = "Is he dead? Hopefully I'm wrong."
+	>>> text_indentation(str)
+	Is he dead?
+	<BLANKLINE>
+	Hopefully I'm wrong.
+	<BLANKLINE>
+
+3 - Sentence with colon 
+========================================
+
+::
+	>>> str = "Halo: The Fall of Reach"
+	>>> text_indentation(str)
+	Halo:
+	<BLANKLINE>
+	The Fall of Reach
+
+4 - Mixed characters
+========================================
+
+::
+	>>> str = "I am all there is."\
+	...	     "Negative!: Primitive! Limited! I let you live!\n"\
+	...	     "But I gave you life."\
+	...	     "What else :could you do?"\
+	...	     "To do what was right\n"\
+	...	     "I'm perfect! Are you?"\
+	>>> text_indentation(str)
+	I am all there is.
+	<BLANKLINE>
+	Negative!:
+	<BLANKLINE>
+	Primitive! Limited! I let you live!
+	But I gave you life.
+	<BLANKLINE>
+	What else :
+	<BLANKLINE>
+	could you do?
+	<BLANKLINE>
+	To do what was right
+	I'm perfect! Are you?
+	<BLANKLINE>
+
+5 - Big text
+========================================
+
+::
+	>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. "\
+	...		      "Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? "\
+	...		      "Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: "\
+	...		      "Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. "\
+	...		      "Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum "\
+	...		      "rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo "\
+	...		      "stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum "\
+	...		      "cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio "\
+	...		      "beatiorem! Iam ruinas videres")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	Quonam modo?
+	<BLANKLINE>
+	Utrum igitur tibi litteram videor an totas paginas commovere?
+	<BLANKLINE>
+	Non autem hoc:
+	<BLANKLINE>
+	igitur ne illud quidem.
+	<BLANKLINE>
+	Fortasse id optimum, sed ubi illud:
+	<BLANKLINE>
+	Plus semper voluptatis?
+	<BLANKLINE>
+	Teneo, inquit, finem illi videri nihil dolere.
+	<BLANKLINE>
+	Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+	<BLANKLINE>
+	Si id dicis, vicimus.
+	<BLANKLINE>
+	Inde sermone vario sex illa a Dipylo stadia confecimus.
+	<BLANKLINE>
+	Sin aliud quid voles, postea.
+	<BLANKLINE>
+	Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+	<BLANKLINE>
+	Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+
+6 - Empty text
+========================================
+
+::
+	>>> text_indentation("")
+
+7 - Big text, no required characters found
+========================================
+
+::
+	>>> str = "Cat's foot, iron claw\n"\
+	...	  "Neurosurgeons scream for more\n"\
+	...	  "At paranoia's poison door\n"\
+	...	  "Twenty-first century schizoid man"\
+	>>> text_indentation(str)
+	Cat's foot, iron claw
+	Neurosurgeons scream for more
+	At paranoia's poison door
+	Twenty-first century schizoid man
+
+8 - Just a period character
+========================================
+
+::
+	>>> text_indentation(".")
+	.
+	<BLANKLINE>
+
+9 - A bunch of garbage
+========================================
+
+::
+	>>> str = "The.??: Piper: at The? G?a:te.s of :Dawn"
+	>>> text_indentation(str)
+	The.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	Piper:
+	<BLANKLINE>
+	at The?
+	<BLANKLINE>
+	G?
+	<BLANKLINE>
+	a:
+	<BLANKLINE>
+	te.
+	<BLANKLINE>
+	s of :
+	<BLANKLINE>
+	Dawn
+
+10 - A bunch of garbage. Pt. 2
+========================================
+
+::
+	>>> str = "Houses.?:?:of: the Holy??."
+	>>> text_indentation(str)
+	Houses.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	of:
+	<BLANKLINE>
+	the Holy?
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	.
+	<BLANKLINE>
