@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 
-This module contains the function definition for task 3.
+This module contains the function definition for task 4.
 
 """
 
@@ -21,6 +21,5 @@ def print_square(size):
                 print()
         else:
             raise ValueError("size must be >= 0")
-        print()
     else:
         raise TypeError("size must be an integer")

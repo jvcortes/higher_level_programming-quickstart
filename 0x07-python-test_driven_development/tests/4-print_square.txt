@@ -13,7 +13,6 @@
 	#####
 	#####
 	#####
-	<BLANKLINE>
 
 2 - Print a square with a size of 0
 ========================================
@@ -22,7 +21,6 @@
 
 ::
 	>>> print_square(0)
-	<BLANKLINE>
 
 3 - Print a square with a size of 1 and 12 
 ========================================
@@ -30,7 +28,6 @@
 ::
 	>>> print_square(1)
 	#
-	<BLANKLINE>
 
 ::
 	>>> print_square(12) 
@@ -46,7 +43,6 @@
 	############
 	############
 	############
-	<BLANKLINE>
 
 5 - Print a square with a size which is less than zero
 ========================================
@@ -89,14 +85,11 @@
 	####
 	####
 	####
-	<BLANKLINE>
 	####
 	####
 	####
 	####
-	<BLANKLINE>
 	####
 	####
 	####
 	####
-	<BLANKLINE>
