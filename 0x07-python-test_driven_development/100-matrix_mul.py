@@ -5,7 +5,7 @@ This module holds the definitions for task 7
 
 
 def matrix_mul(m_a, m_b):
-    """ Returns a matrix multiplication between two matrixes.
+    """ Returns a matrix multiplication between two matrices.
 
     Args:
         m_a (list: int, float): first matrix
