@@ -2,7 +2,7 @@
 """
 This module holds the definitions for task 8
 """
-from numpy import array, dot
+from numpy import array, matmul
 
 
 def lazy_matrix_mul(m_a, m_b):
@@ -50,4 +50,4 @@ def lazy_matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    return array(m_a).dot(array(m_b))
+    return matmul(array(m_a), array(m_b))
