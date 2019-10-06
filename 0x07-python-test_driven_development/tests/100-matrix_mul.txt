@@ -1,25 +1,25 @@
-``matrix_mul()`` returns the multiplication betwenn two matrixes
+``matrix_mul()`` returns the multiplication betwenn two matrices
 
-1 - Multiplication of matrixes of integers
+1 - Multiplication of matrices of integers
 ========================================
 
-``matrix_mul()`` works with two matrixes of integers:
+``matrix_mul()`` works with two matrices of integers:
 
 ::
 	>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
 	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 	[[7, 10], [15, 22]]
 
-2 - Multiplication of matrixes of floating point values:
+2 - Multiplication of matrices of floating point values:
 ========================================
 
-``matrix_mul()`` works with two matrixes of floating points:
+``matrix_mul()`` works with two matrices of floating points:
 
 ::
 	>>> matrix_mul([[8.2, 2.4], [2.3, 5.4]], [[0.3, 10.0], [3.1, 7.7]])
 	[[9.9, 100.48], [17.43, 64.58]]
 
-3 - Multiplication of matrixes of mixed types 
+3 - Multiplication of matrices of mixed types 
 ========================================
 
 ``matrix_mul()`` works with mixed types:
@@ -83,7 +83,7 @@ floating point values:
 7 - Matrix with rows of unequal sizes:
 ========================================
 
-``matrix_mul()`` will raise a TypeError exception if one of the two matrixes
+``matrix_mul()`` will raise a TypeError exception if one of the two matrices
 don't have the same length in each row:
 
 ::
