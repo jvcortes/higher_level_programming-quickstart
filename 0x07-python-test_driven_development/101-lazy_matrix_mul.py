@@ -2,7 +2,7 @@
 """
 This module holds the definitions for task 8
 """
-from numpy import array, matmul
+from numpy import matmul
 
 
 def lazy_matrix_mul(m_a, m_b):
@@ -13,4 +13,4 @@ def lazy_matrix_mul(m_a, m_b):
         m_b (list: int, float): second matrix
     """
 
-    return matmul(array(m_a), array(m_b))
+    return matmul(m_a, m_b)
