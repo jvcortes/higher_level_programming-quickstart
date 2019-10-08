@@ -56,3 +56,4 @@ floating point values:
 	>>> add_integer("foo", "bar")
 	Traceback (most recent call last):
 	TypeError: a must be an integer
+
