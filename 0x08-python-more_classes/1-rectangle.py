@@ -65,7 +65,7 @@ class Rectangle:
         Height has to be an integer with a value equal or greater than zero.
         """
 
-        return self.__width
+        return self.__height
 
     @height.setter
     def height(self, value):
