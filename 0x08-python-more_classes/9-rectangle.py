@@ -151,5 +151,3 @@ class Rectangle:
 
         """
         return Rectangle(size, size)
-
-        
