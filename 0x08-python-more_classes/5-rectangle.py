@@ -41,6 +41,7 @@ class Rectangle:
         self.__width = width
 
     def __del__(self):
+        """ Prints message when the rectangle instance gets deleted. """
         print("Bye rectangle...")
 
     def __str__(self):
