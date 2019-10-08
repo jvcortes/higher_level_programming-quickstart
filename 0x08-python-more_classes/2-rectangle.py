@@ -84,5 +84,6 @@ class Rectangle:
     def perimeter(self):
         """ Returns the perimeter of the square. """
 
-        return (self.height * 2) + (self.width * 2) if any(
-            (self.height > 0, self.width > 0)) else 0
+        if 0 in (self.height, self.width):
+            return 0
+        return (self.height * 2) + (self.width * 2)
