@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
 
-This module holds the function definition for task 0
+This module holds the class definition for task 7
 
 """
 
 
 class BaseGeometry():
-    """ Defines an empty Geometry object. """
+    """ Defines an Geometry object. """
 
     def area(self):
         raise Exception("area() is not implemented")
@@ -22,4 +22,4 @@ class BaseGeometry():
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{} must be an greater than 0".format(name))
+            raise ValueError("{} must be greater than 0".format(name))
