@@ -59,7 +59,7 @@ sorting.
 >>> l = MyList([5, 5, 5, 5, 5, 5, 5, 0], [54])
 Traceback (most recent call last):
 ...
-TypeError: list expected at most 1 arguments, got 2
+TypeError: list() takes at most 1 argument (2 given)
 
 
 8 - Try to call function print_sorted with an argument
