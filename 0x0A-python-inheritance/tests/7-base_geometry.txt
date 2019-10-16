@@ -42,6 +42,31 @@ Traceback (most recent call last):
 ...
 TypeError: donut must be an integer
 
+>>> bg.integer_validator("None", None)
+Traceback (most recent call last):
+...
+TypeError: None must be an integer
+
+>>> bg.integer_validator("dict", {0, 2})
+Traceback (most recent call last):
+...
+TypeError: dict must be an integer
+
+>>> bg.integer_validator("True", True)
+Traceback (most recent call last):
+...
+TypeError: True must be an integer
+
+>>> bg.integer_validator("list", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: list must be an integer
+
+>>> bg.integer_validator("tuple", (0, ))
+Traceback (most recent call last):
+...
+TypeError: tuple must be an integer
+
 
 Also, the function will raise a ValueError exception if the value is less or equal
 than zero:
