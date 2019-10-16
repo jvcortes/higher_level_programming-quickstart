@@ -70,3 +70,29 @@ TypeError: list() takes at most 1 argument (2 given)
 Traceback (most recent call last):
 ...
 TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+
+9 - Check ``__str__()``
+========================================
+
+>>> l = MyList([5, 5, 5, 5, 5, 5, 5, 0])
+>>> print(l)
+[5, 5, 5, 5, 5, 5, 5, 0]
+
+
+10 - Use of instance function ``append()``
+========================================
+
+>>> l = MyList([5, 5, 5, 5, 5, 5, 5, 0])
+>>> l.append("OK")
+>>> l
+[5, 5, 5, 5, 5, 5, 5, 0, 'OK']
+
+
+11 - ``print_sorted()`` doesn't return anything
+========================================
+
+>>> l = MyList([5, 5, 5, 5, 5, 5, 5, 0])
+>>> i = l.print_sorted()
+[0, 5, 5, 5, 5, 5, 5, 5]
+>>> i
