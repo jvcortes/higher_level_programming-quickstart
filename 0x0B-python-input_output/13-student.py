@@ -50,4 +50,5 @@ class Student:
             json (str): JSON representation
         """
 
-        self.__dict__ = json
+        if json:
+            self.__dict__ = json
