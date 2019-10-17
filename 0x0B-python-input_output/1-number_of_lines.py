@@ -5,7 +5,7 @@ This module contains the function definition for task 1.
 
 
 def number_of_lines(filename=""):
-    """ prints the contents of a file.
+    """ returs the number of lines of a file
 
     Args:
         filename (str): file name
