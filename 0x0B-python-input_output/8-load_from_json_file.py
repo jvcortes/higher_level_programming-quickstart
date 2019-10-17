@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module contains the function definition for task 7.
+This module contains the function definition for task 8.
 """
 import json
 
