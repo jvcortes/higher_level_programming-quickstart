@@ -12,7 +12,11 @@ def read_lines(filename="", nb_lines=0):
         nb_lines (int): number of lines
     """
     with open(filename, 'r') as f:
-        for n, line in enumerate(f):
-            if n >= nb_lines:
-                break
-            print(line, end='')
+        if nb_lines <= 0:
+            for line in f:
+                print(line, end='')
+        else:
+            for n, line in enumerate(f):
+                if n >= nb_lines:
+                    break
+                print(line, end='')
