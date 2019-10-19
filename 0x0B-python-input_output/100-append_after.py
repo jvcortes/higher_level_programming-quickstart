@@ -21,7 +21,6 @@ def append_after(filename="", search_string="", new_string=""):
             if search_string in line:
                 new_line += new_string
             new_content += new_line
-        print(new_content)
         f.truncate(0)
         f.seek(0)
         f.write(new_content)
