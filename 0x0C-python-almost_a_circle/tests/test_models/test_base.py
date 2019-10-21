@@ -11,6 +11,12 @@ class BaseTest(unittest.TestCase):
     Defines the test cases for the `Base` class
     """
 
+    @classmethod
+    def setUpClass(cls):
+        for name in Base.__dict__:
+            if "__nb_objects" in name:
+                setattr(Base, name, 0)
+
     def test_create_and_assert_instance(self):
         instance = Base()
         self.assertIsInstance(instance, Base)
