@@ -59,7 +59,11 @@ class Rectangle(Base):
 
     def display(self):
         """Prints its representation to the standard output."""
+        for _ in range(0, self.__y):
+            print()
         for i in range(0, self.__height):
+            for _ in range(0, self.__x):
+                print(' ', end='')
             for _ in range(0, self.__width):
                 print('#', end='')
             if i < self.__height - 1:

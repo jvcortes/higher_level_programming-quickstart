@@ -57,3 +57,52 @@ class RectangleDisplayTest(unittest.TestCase):
         self.assertEqual(output.getvalue(),
                          "#",
                          "wrong output")
+
+    def test_rectangle_display_rectangle_with_x(self):
+        output = StringIO()
+        sys.stdout = output
+        instance = Rectangle(4, 4, 6)
+        instance.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(),
+                         "      ####\n"
+                         "      ####\n"
+                         "      ####\n"
+                         "      ####",
+                         "wrong output")
+
+    def test_rectangle_display_rectangle_with_y(self):
+        output = StringIO()
+        sys.stdout = output
+        instance = Rectangle(4, 4, 0, 5)
+        instance.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(),
+                         "\n"
+                         "\n"
+                         "\n"
+                         "\n"
+                         "\n"
+                         "####\n"
+                         "####\n"
+                         "####\n"
+                         "####",
+                         "wrong output")
+
+    def test_rectangle_display_rectangle_with_x_and_y(self):
+        output = StringIO()
+        sys.stdout = output
+        instance = Rectangle(4, 4, 7, 5)
+        instance.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(),
+                         "\n"
+                         "\n"
+                         "\n"
+                         "\n"
+                         "\n"
+                         "       ####\n"
+                         "       ####\n"
+                         "       ####\n"
+                         "       ####",
+                         "wrong output")
