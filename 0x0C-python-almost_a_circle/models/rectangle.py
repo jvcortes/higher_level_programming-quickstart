@@ -53,6 +53,10 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def area(self):
+        """int: returns the area of the rectangle."""
+        return self.__width * self.__height
+
     @property
     def width(self):
         """int: width of the Rectangle instance"""
