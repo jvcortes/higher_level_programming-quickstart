@@ -66,8 +66,7 @@ class Rectangle(Base):
                 print(' ', end='')
             for _ in range(0, self.__width):
                 print('#', end='')
-            if i < self.__height - 1:
-                print()
+            print()
 
     @property
     def width(self):

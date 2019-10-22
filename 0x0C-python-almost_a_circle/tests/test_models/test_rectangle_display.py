@@ -28,7 +28,7 @@ class RectangleDisplayTest(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(),
                          "####\n"
-                         "####",
+                         "####\n",
                          "wrong output")
 
     def test_rectangle_display_big_rectangle(self):
@@ -45,7 +45,7 @@ class RectangleDisplayTest(unittest.TestCase):
                          "########\n"
                          "########\n"
                          "########\n"
-                         "########",
+                         "########\n",
                          "wrong output")
 
     def test_rectangle_display_one_by_one_rectangle(self):
@@ -55,7 +55,7 @@ class RectangleDisplayTest(unittest.TestCase):
         instance.display()
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(),
-                         "#",
+                         "#\n",
                          "wrong output")
 
     def test_rectangle_display_rectangle_with_x(self):
@@ -68,7 +68,7 @@ class RectangleDisplayTest(unittest.TestCase):
                          "      ####\n"
                          "      ####\n"
                          "      ####\n"
-                         "      ####",
+                         "      ####\n",
                          "wrong output")
 
     def test_rectangle_display_rectangle_with_y(self):
@@ -86,7 +86,7 @@ class RectangleDisplayTest(unittest.TestCase):
                          "####\n"
                          "####\n"
                          "####\n"
-                         "####",
+                         "####\n",
                          "wrong output")
 
     def test_rectangle_display_rectangle_with_x_and_y(self):
@@ -104,5 +104,5 @@ class RectangleDisplayTest(unittest.TestCase):
                          "       ####\n"
                          "       ####\n"
                          "       ####\n"
-                         "       ####",
+                         "       ####\n",
                          "wrong output")
