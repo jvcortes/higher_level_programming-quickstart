@@ -28,6 +28,16 @@ class Rectangle(Base):
     __nb_objects = 0
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ Initializes a Rectangle instance.
+
+        Args:
+            width (int): width for the Rectangle instance
+            height (int): height for the Rectangle instance
+            x (int): horizontal position for the Rectangle instance
+            y (int): vertical position for the Rectangle instance
+            id (int): id of the Rectangle instance
+        """
+
         super(Rectangle, self).__init__(id)
 
         if not isinstance(width, int):
