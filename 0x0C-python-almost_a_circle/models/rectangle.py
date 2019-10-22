@@ -61,12 +61,37 @@ class Rectangle(Base):
         """Prints its representation to the standard output."""
         for _ in range(0, self.__y):
             print()
-        for i in range(0, self.__height):
+        for _ in range(0, self.__height):
             for _ in range(0, self.__x):
                 print(' ', end='')
             for _ in range(0, self.__width):
                 print('#', end='')
             print()
+
+    def update(self, *args):
+        """Updates the rectangle instance using no-keyword arguments.
+
+        Args:
+            1, id (int): new id for the rectangle
+            2, width (int): new width for the rectangle
+            3, height (int): new height for the rectangle
+            4, x (int): new x position for the rectangle
+            5, y (int): new y position for the rectangle
+
+        The arguments should comply with their respective requirements.
+        """
+
+        for idx, arg in enumerate(args):
+            if idx == 0:
+                self.id = arg
+            if idx == 1:
+                self.width = arg
+            if idx == 2:
+                self.height = arg
+            if idx == 3:
+                self.x = arg
+            if idx == 4:
+                self.y = arg
 
     @property
     def width(self):
