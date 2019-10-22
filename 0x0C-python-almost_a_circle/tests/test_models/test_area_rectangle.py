@@ -7,7 +7,7 @@ This module contains the unit tests for the `Base` class.
 """
 
 
-class BaseTest(unittest.TestCase):
+class RectangleAreaTest(unittest.TestCase):
     """
     Defines the test cases for the `Base` class
     """

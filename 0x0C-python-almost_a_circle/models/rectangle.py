@@ -125,3 +125,12 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
 
         self.__y = value
+
+    def __str__(self):
+        """str: Returns the string representation of the rectangle. """
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id,
+                                                self.__x,
+                                                self.__y,
+                                                self.__width,
+                                                self.__height)

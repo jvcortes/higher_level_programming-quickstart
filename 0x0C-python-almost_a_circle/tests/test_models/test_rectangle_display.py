@@ -9,7 +9,7 @@ This module contains the unit tests for the `Base` class.
 """
 
 
-class BaseTest(unittest.TestCase):
+class RectangleDisplayTest(unittest.TestCase):
     """
     Defines the test cases for the `Rectangle` class
     """
