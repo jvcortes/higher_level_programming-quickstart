@@ -68,8 +68,9 @@ class Rectangle(Base):
                 print('#', end='')
             print()
 
-    def update(self, *args):
-        """Updates the rectangle instance using no-keyword arguments.
+    def update(self, *args, **kwargs):
+        """Updates the rectangle instance using no-keyword or keyworded
+            arguments.
 
         Args:
             1, id (int): new id for the rectangle
@@ -81,17 +82,22 @@ class Rectangle(Base):
         The arguments should comply with their respective requirements.
         """
 
-        for idx, arg in enumerate(args):
-            if idx == 0:
-                self.id = arg
-            if idx == 1:
-                self.width = arg
-            if idx == 2:
-                self.height = arg
-            if idx == 3:
-                self.x = arg
-            if idx == 4:
-                self.y = arg
+        if args:
+            for idx, arg in enumerate(args):
+                if idx == 0:
+                    self.id = arg
+                if idx == 1:
+                    self.width = arg
+                if idx == 2:
+                    self.height = arg
+                if idx == 3:
+                    self.x = arg
+                if idx == 4:
+                    self.y = arg
+        elif kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
     @property
     def width(self):

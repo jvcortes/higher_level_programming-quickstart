@@ -20,7 +20,6 @@ class RectangleUpdateTest(unittest.TestCase):
     def test_rectangle_update_id(self):
         instance = Rectangle(4, 2)
         instance.update(420)
-        print("test_rectangle_update_id" + str(instance.id))
         self.assertEqual(instance.id, 420, "wrong id")
 
     def test_rectangle_update_width(self):
@@ -108,7 +107,7 @@ class RectangleUpdateTest(unittest.TestCase):
                             9,
                             0)
 
-            self.assertTrue("width should be > 0" in str(context.exception))
+            self.assertTrue("width must be > 0" in str(context.exception))
 
     def test_rectangle_update_zero_width(self):
         instance = Rectangle(4, 2, 23, 10, 96)
@@ -120,7 +119,7 @@ class RectangleUpdateTest(unittest.TestCase):
                             9,
                             0)
 
-            self.assertTrue("width should be > 0" in str(context.exception))
+            self.assertTrue("width must be > 0" in str(context.exception))
 
     def test_rectangle_update_negative_negative_x(self):
         instance = Rectangle(4, 2, 23, 10, 96)
@@ -132,4 +131,107 @@ class RectangleUpdateTest(unittest.TestCase):
                             -3,
                             0)
 
-            self.assertTrue("x should be >= 0" in str(context.exception))
+            self.assertTrue("x must be >= 0" in str(context.exception))
+
+    def test_rectangle_update_kwarg_id(self):
+        instance = Rectangle(4, 2)
+        instance.update(id=420)
+        self.assertEqual(instance.id, 420, "wrong id")
+
+    def test_rectangle_update_kwarg_width(self):
+        instance = Rectangle(4, 2)
+        instance.update(width=8)
+        self.assertEqual(instance.id, 1, "wrong id")
+        self.assertEqual(instance.width, 8, "wrong width")
+
+    def test_rectangle_update_kwarg_height(self):
+        instance = Rectangle(4, 2)
+        instance.update(height=7)
+        self.assertEqual(instance.id, 1, "wrong id")
+        self.assertEqual(instance.width, 4, "wrong width")
+        self.assertEqual(instance.height, 7, "wrong height")
+
+    def test_rectangle_update_kwarg_x(self):
+        instance = Rectangle(4, 2)
+        instance.update(x=5)
+        self.assertEqual(instance.id, 1, "wrong id")
+        self.assertEqual(instance.width, 4, "wrong width")
+        self.assertEqual(instance.height, 2, "wrong height")
+        self.assertEqual(instance.x, 5, "wrong x")
+
+    def test_rectangle_update_kwarg_y(self):
+        instance = Rectangle(4, 2)
+        instance.update(y=7)
+        self.assertEqual(instance.id, 1, "wrong id")
+        self.assertEqual(instance.width, 4, "wrong width")
+        self.assertEqual(instance.height, 2, "wrong height")
+        self.assertEqual(instance.x, 0, "wrong x")
+        self.assertEqual(instance.y, 7, "wrong y")
+
+    def test_rectangle_update_kwarg_all(self):
+        instance = Rectangle(4, 2, 23, 10, 96)
+        instance.update(id=100,
+                        width=7,
+                        height=7,
+                        x=9,
+                        y=0)
+
+        self.assertEqual(instance.id, 100, "wrong id")
+        self.assertEqual(instance.width, 7, "wrong width")
+        self.assertEqual(instance.height, 7, "wrong height")
+        self.assertEqual(instance.x, 9, "wrong x")
+        self.assertEqual(instance.y, 0, "wrong y")
+
+    def test_rectangle_update_args_and_kwargs(self):
+        instance = Rectangle(4, 2, 23, 10, 96)
+        instance.update(68,
+                        id=100,
+                        width=7,
+                        height=7,
+                        x=9,
+                        y=0)
+
+        self.assertEqual(instance.id, 68, "wrong id")
+        self.assertEqual(instance.width, 4, "wrong width")
+        self.assertEqual(instance.height, 2, "wrong height")
+        self.assertEqual(instance.x, 23, "wrong x")
+        self.assertEqual(instance.y, 10, "wrong y")
+
+    def test_rectangle_update_additional_kwargs(self):
+        instance = Rectangle(4, 2, 23, 10, 96)
+        instance.update(id=100,
+                        width=7,
+                        height=7,
+                        x=9,
+                        y=0,
+                        additional="argument")
+
+        self.assertEqual(instance.id, 100, "wrong id")
+        self.assertEqual(instance.width, 7, "wrong width")
+        self.assertEqual(instance.height, 7, "wrong height")
+        self.assertEqual(instance.x, 9, "wrong x")
+        self.assertEqual(instance.y, 0, "wrong y")
+
+    def test_rectangle_update_kwarg_negative_width(self):
+        instance = Rectangle(4, 2, 23, 10, 96)
+        with self.assertRaises(ValueError) as context:
+            instance.update(id=100,
+                            width=-7,
+                            height=7,
+                            x=9,
+                            y=0,
+                            additional="argument")
+
+        self.assertTrue("width must be > 0" in str(context.exception))
+
+    def test_rectangle_update_kwarg_negative_x(self):
+        instance = Rectangle(4, 2, 23, 10, 96)
+        with self.assertRaises(ValueError) as context:
+            instance.update(id=100,
+                            width=7,
+                            height=7,
+                            x=-9,
+                            y=0,
+                            additional="argument")
+
+        self.assertTrue("x must be >= 0" in str(context.exception))
