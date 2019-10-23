@@ -63,6 +63,14 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def to_dictionary(self):
+        rep = {'id': 0, 'width': 0, 'height': 0, 'x': 0, 'y': 0}
+        for key, _ in rep.items():
+            if hasattr(self, key):
+                rep[key] = getattr(self, key)
+
+        return rep
+
     def area(self):
         """int: returns the area of the rectangle."""
         return self.__width * self.__height
