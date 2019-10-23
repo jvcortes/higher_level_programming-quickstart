@@ -51,21 +51,21 @@ class SquareTest(unittest.TestCase):
         with self.assertRaises(TypeError) as context:
             Square(2.1)
 
-        self.assertTrue('size must be an integer'
+        self.assertTrue('width must be an integer'
                         in str(context.exception))
 
     def test_try_to_create_instance_with_size_as_string(self):
         with self.assertRaises(TypeError) as context:
             Square("100")
 
-        self.assertTrue('size must be an integer'
+        self.assertTrue('width must be an integer'
                         in str(context.exception))
 
     def test_try_to_create_instance_with_size_as_list(self):
         with self.assertRaises(TypeError) as context:
             Square([10, 20], 2)
 
-        self.assertTrue('size must be an integer'
+        self.assertTrue('width must be an integer'
                         in str(context.exception))
 
     def test_try_to_create_instance_with_x_as_floating_point(self):
@@ -114,14 +114,14 @@ class SquareTest(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             Square(-2)
 
-        self.assertTrue('size must be > 0'
+        self.assertTrue('width must be > 0'
                         in str(context.exception))
 
     def test_try_to_create_instance_with_a_zero_size(self):
         with self.assertRaises(ValueError) as context:
             Square(0)
 
-        self.assertTrue('size must be > 0'
+        self.assertTrue('width must be > 0'
                         in str(context.exception))
 
     def test_try_to_create_instance_with_negative_x(self):
@@ -268,3 +268,29 @@ class SquareTest(unittest.TestCase):
 
         self.assertTrue('__init__() takes from 2 to 5 positional arguments'
                         in str(context.exception))
+
+    def test_set_size(self):
+        instance = Square(4)
+        instance.size = 3
+        self.assertEqual(instance.size, 3, "wrong size")
+
+    def test_set_negative_size(self):
+        with self.assertRaises(ValueError) as context:
+            instance = Square(4)
+            instance.size = -3
+
+        self.assertTrue('width must be > 0' in str(context.exception))
+
+    def test_set_zero_size(self):
+        with self.assertRaises(ValueError) as context:
+            instance = Square(4)
+            instance.size = 0
+
+        self.assertTrue('width must be > 0' in str(context.exception))
+
+    def test_set_non_int_size(self):
+        with self.assertRaises(TypeError) as context:
+            instance = Square(4)
+            instance.size = 8.23
+
+        self.assertTrue('width must be an integer' in str(context.exception))

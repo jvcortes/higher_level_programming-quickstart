@@ -44,3 +44,17 @@ class Square(Rectangle):
                                              self.x,
                                              self.y,
                                              self.width)
+
+    @property
+    def size(self):
+        """ int: returns the width of the square.
+
+        The setter function will set the width and the height of the square
+        with the same value.
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
