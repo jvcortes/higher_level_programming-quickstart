@@ -45,6 +45,30 @@ class Square(Rectangle):
                                              self.y,
                                              self.width)
 
+    def update(self, *args, **kwargs):
+        """ Updates a Square instance with non-keyworded/keyword args.
+
+        Args:
+            1, id (int): new id for the square
+            2, size (int): new size for the square
+            3, x (int): new x position for the square
+            4, y (int): new y position for the square
+
+        The arguments should comply with their respective requirements.
+        """
+
+        if args:
+            attrs = ("id", "size", "x", "y")
+            for idx, arg in enumerate(args):
+                if idx >= len(attrs):
+                    break
+                if hasattr(self, attrs[idx]):
+                    setattr(self, attrs[idx], arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
     @property
     def size(self):
         """ int: returns the width of the square.
