@@ -37,7 +37,6 @@ class Square(Rectangle):
 
         super(Square, self).__init__(size, size, x, y, id)
 
-
     def update(self, *args, **kwargs):
         """ Updates a Square instance with non-keyworded/keyword args.
 
@@ -92,4 +91,3 @@ class Square(Rectangle):
                                              self.x,
                                              self.y,
                                              self.width)
-
