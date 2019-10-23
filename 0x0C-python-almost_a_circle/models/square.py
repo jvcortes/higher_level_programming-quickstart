@@ -71,6 +71,8 @@ class Square(Rectangle):
             rep['size'] = rep['width']
             del rep['width']
 
+        return rep
+
     @property
     def size(self):
         """ int: returns the width of the square.
