@@ -64,12 +64,10 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """ Returns the dictionary representation of the square. """
-        rep = {'id': 0, 'width': 0, 'x': 0, 'y': 0}
+        rep = {'id': 0, 'size': 0, 'x': 0, 'y': 0}
         for key, _ in rep.items():
             if hasattr(self, key):
                 rep[key] = getattr(self, key)
-            rep['size'] = rep['width']
-            del rep['width']
 
         return rep
 
