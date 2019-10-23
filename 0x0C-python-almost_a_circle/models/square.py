@@ -32,11 +32,8 @@ class Square(Rectangle):
             x (int): horizontal position for the Square instance
             y (int): vertical position for the Square instance
             id (int): id of the Square instance
+
         """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size <= 0:
-            raise ValueError("size must be > 0")
 
         super(Square, self).__init__(size, size, x, y, id)
 
