@@ -68,3 +68,20 @@ class Base:
                     [x.to_dictionary() for x in list_objs]))
             else:
                 fi.write("[]")
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Instantiates a Base object from a dictionary.
+
+        Args:
+            dictionary (dict): dictionary of attributes for the instance.
+        """
+
+        if dictionary:
+            if cls.__name__ == "Rectangle":
+                instance = cls(1, 1)
+                instance.update(**dictionary)
+            else:
+                instance = cls(1)
+                instance.update(**dictionary)
+            return instance
