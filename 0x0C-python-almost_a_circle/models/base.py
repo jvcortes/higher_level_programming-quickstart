@@ -53,7 +53,7 @@ class Base:
 
         with open("{}.json".format(cls.__name__), "w+") as fi:
             if list_objs and list_objs is not None:
-                fi.write(str(list(cls.to_json_string(x.to_dictionary())
-                                  for x in list_objs)))
+                fi.write(cls.to_json_string(
+                    [x.to_dictionary() for x in list_objs]))
             else:
                 fi.write("[]")
