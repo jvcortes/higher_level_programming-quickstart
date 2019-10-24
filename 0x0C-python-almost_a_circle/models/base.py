@@ -3,6 +3,7 @@
 Module for the Base class.
 """
 import json
+import os
 
 
 class Base:
@@ -68,6 +69,18 @@ class Base:
                     [x.to_dictionary() for x in list_objs]))
             else:
                 fi.write("[]")
+
+    @classmethod
+    def load_from_file(cls):
+        """ Loads an instance from JSON representation in a file."""
+
+        instances = []
+        if os.path.exists("{}.json".format(cls.__name__)):
+            with open("{}.json".format(cls.__name__), "r") as fi:
+                li = json.loads(fi.read())
+                for dic in li:
+                    instances.append(cls.create(**dic))
+        return instances
 
     @classmethod
     def create(cls, **dictionary):
