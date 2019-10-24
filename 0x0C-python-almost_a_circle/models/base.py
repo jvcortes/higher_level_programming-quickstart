@@ -56,4 +56,4 @@ class Base:
                 fi.write(str(list(cls.to_json_string(x.to_dictionary())
                                   for x in list_objs)))
             else:
-                fi.write(cls.to_json_string("[]"))
+                fi.write("[]")
