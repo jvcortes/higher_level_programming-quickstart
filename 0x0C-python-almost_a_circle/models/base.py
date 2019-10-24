@@ -77,7 +77,7 @@ class Base:
         instances = []
         if os.path.exists("{}.json".format(cls.__name__)):
             with open("{}.json".format(cls.__name__), "r") as fi:
-                li = json.loads(fi.read())
+                li = cls.from_json_string(fi.read())
                 for dic in li:
                     instances.append(cls.create(**dic))
         return instances
