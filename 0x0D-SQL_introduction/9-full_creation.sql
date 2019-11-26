@@ -2,7 +2,7 @@
 -- The table contains:
 -- id, INT field. name, VARCHAR(256) field and score, INT field.
 -- The script will add four initial rows to the table.
-CREATE TABLE second_table (
+CREATE TABLE IF NOT EXISTS second_table (
 	id INT,
 	name VARCHAR(256),
 	score INT
