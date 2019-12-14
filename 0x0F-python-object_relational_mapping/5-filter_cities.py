@@ -19,11 +19,7 @@ if __name__ == "__main__":
                     ORDER BY cities.id ASC;
                 """, {'state_name': sys.argv[4]})
     rs = cur.fetchall()
-    for i, record in enumerate(rs):
-        if i < len(rs) - 1:
-            print(record[0], end=", ")
-        else:
-            print(record[0])
+    print(", ".join(record[0] for record in rs))
 
     cur.close()
     conn.close()
