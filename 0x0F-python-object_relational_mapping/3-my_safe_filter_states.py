@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     cur.execute("""
                     SELECT * FROM states
-                    WHERE name LIKE BINARY %(name)s
+                    WHERE name == %(name)s
                     ORDER BY id ASC;
                 """,
                 {'name': sys.argv[4]})
