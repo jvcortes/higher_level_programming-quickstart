@@ -16,7 +16,7 @@ if __name__ == "__main__":
                     SELECT cities.name FROM
                     ((cities INNER JOIN states ON cities.state_id = states.id))
                     WHERE states.name = %(state_name)s
-                    ORDER BY cities.id, states.name ASC;
+                    ORDER BY cities.id ASC;
                 """, {'state_name': sys.argv[4]})
     rs = cur.fetchall()
     for i, record in enumerate(rs):
