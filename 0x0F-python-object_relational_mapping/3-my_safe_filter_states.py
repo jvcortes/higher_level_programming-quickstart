@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     cur.execute("""
                     SELECT * FROM states
-                    WHERE name == %(name)s
+                    WHERE name = %(name)s
                     ORDER BY id ASC;
                 """,
                 {'name': sys.argv[4]})
