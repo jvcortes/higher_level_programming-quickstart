@@ -12,22 +12,17 @@ def find_peak(list_of_integers):
         list_of_integers (list): list of integers.
     """
 
+    if not list_of_integers or not isinstance(list_of_integers, list):
+        return None
     if len(list_of_integers) == 1:
         return list_of_integers[0]
-    if len(list_of_integers) == 2:
-        return (list_of_integers[0]
-                if list_of_integers[0] >= list_of_integers[1]
-                else list_of_integers[1])
-    if not list_of_integers:
-        return None
 
-    c = 1
+    c = 0
     while c < len(list_of_integers):
-        if (list_of_integers[c-1] <= list_of_integers[c]
-                >= list_of_integers[c+1]):
-            return list_of_integers[c]
+        if list_of_integers[c] >= list_of_integers[c+1]:
+            if c == 0 or list_of_integers[c-1] <= list_of_integers[c]:
+                return list_of_integers[c]
+            c += 2
 
         if list_of_integers[c] <= list_of_integers[c+1]:
             c += 1
-        else:
-            c += 2
