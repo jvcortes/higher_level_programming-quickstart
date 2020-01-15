@@ -8,8 +8,8 @@ if __name__ == '__main__':
     import sys
 
     request = requests.get("https://api.github.com/repos/{}/{}/commits".format(
-        sys.argv[1],
-        sys.argv[2]
+        sys.argv[2],
+        sys.argv[1]
     ))
     for commit in request.json()[:10]:
         print("{}: {}".format(commit['sha'],
