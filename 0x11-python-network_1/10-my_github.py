@@ -9,4 +9,7 @@ if __name__ == '__main__':
 
     request = requests.get("https://api.github.com/user", auth=(sys.argv[1],
                                                                 sys.argv[2]))
-    print(request.json()['id'])
+    if "id" in request.json().keys():
+        print(request.json()['id'])
+    else:
+        print("None")
