@@ -1,7 +1,6 @@
 #!/usr/bin/node
 // Prints the factorial of its first argument.
-function factorial(a) {
-
+function factorial (a) {
   if (!a || a < 1) {
     return 1;
   }
