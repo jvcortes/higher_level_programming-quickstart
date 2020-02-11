@@ -2,8 +2,8 @@
 // Concatenates two files.
 const fs = require('fs');
 
-function generateFile(fileA, fileB, result) {
-  let file = "";
+function generateFile (fileA, fileB, result) {
+  let file = '';
   file = fs.readFileSync(fileA, 'utf8');
   file += fs.readFileSync(fileB, 'utf8');
   fs.writeFileSync(result, file);
