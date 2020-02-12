@@ -5,7 +5,7 @@ const request = require('request');
 request('http://www.swapi.co/api/people/18',
   function (err, response, body) {
     if (err) {
-      console.error(err);
+      console.log(err);
     } else {
       console.log(JSON.parse(body).films.length);
     }

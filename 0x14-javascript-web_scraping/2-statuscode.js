@@ -3,4 +3,11 @@
 const request = require('request');
 
 request.get(process.argv[2])
-  .on('response', (response) => console.log(`code: ${response.statusCode}`));
+  .on('response', function (err, response, body) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`code: ${response.statusCode}`)
+    }
+  }
+);

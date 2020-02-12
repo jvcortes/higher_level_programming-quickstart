@@ -6,7 +6,7 @@ const fs = require('fs');
 request(process.argv[2],
   function (err, response, body) {
     if (err) {
-      console.error(err);
+      console.log(err);
     } else {
       fs.writeFileSync(process.argv[3], body, 'utf8');
     }

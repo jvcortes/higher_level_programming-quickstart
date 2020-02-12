@@ -5,7 +5,7 @@ const request = require('request');
 request(process.argv[2],
   function (err, response, body) {
     if (err) {
-      console.error(err);
+      console.log(err);
     } else {
       let ids = [];
       const todos = JSON.parse(body);
