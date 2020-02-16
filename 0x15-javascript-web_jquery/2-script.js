@@ -1,1 +1,1 @@
-$('DIV#red_header').click(() => $('HEADER').css({'color': 'red'}));
+$('DIV#red_header').click(() => $('HEADER').css({ color: 'red' }));
