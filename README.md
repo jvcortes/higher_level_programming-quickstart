@@ -1,3 +1,3 @@
 # Higher Level Programming
 
-Python code exercises
+Python and JavaScript code exercises
